@@ -2,6 +2,7 @@ import React from 'react'
 import { formatStatus } from 'src/utills/date'
 
 function CarItem({ _, index }: { _: any; index: number }) {
+  console.log(_)
   return (
     <div className='py-3 px-4 bg-[#ecf8ff] shadow-md rounded-lg mt-4' key={index}>
       <div className='flex justify-between'>
@@ -49,7 +50,7 @@ function CarItem({ _, index }: { _: any; index: number }) {
           <p>
             Mã chuyển khoản: <p className='font-semibold inline'>{_.code}</p>
           </p>
-          <p>Tự lái: {_.auto_drive ? 'Có tài xế' : 'Tự lái xe'}</p>
+          <p>Tự lái: {_.auto_drive ? 'Tự lái xe' : 'Có tài xế'}</p>
           <p>Địa điểm chi tiết: {_.location} </p>
           <p>Trạng thái: {formatStatus(_.status)}</p>
         </div>

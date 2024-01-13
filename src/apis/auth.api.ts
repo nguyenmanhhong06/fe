@@ -38,3 +38,13 @@ export const searchFlight = (params: { fromId: string; toId: string; date: strin
     },
     params
   })
+export const searchAirport = (params: { query: string }) =>
+  axios({
+    method: 'get',
+    url: 'https://sky-scrapper1.p.rapidapi.com/api/v1/flights/searchAirport',
+    headers: {
+      'X-RapidAPI-Key': '9986c21fd2msh6fd2d343e6bfb8bp10f11fjsn039753285fa6',
+      'X-RapidAPI-Host': 'sky-scrapper1.p.rapidapi.com'
+    },
+    params
+  })

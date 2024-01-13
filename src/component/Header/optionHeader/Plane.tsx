@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useMutation, useQuery } from 'react-query'
 import { useNavigate } from 'react-router-dom'
-import { searchFlight } from 'src/apis/auth.api'
+import { searchAirport, searchFlight } from 'src/apis/auth.api'
 import Loading from 'src/component/Loading'
-import { formatBody, formatDateReverse } from 'src/utills/date'
+import { formatBody, formatDateReverse, removeVietnameseTones } from 'src/utills/date'
 type OptionType = {
   svg: React.ReactNode
   text: string
@@ -54,6 +54,7 @@ function Plane() {
   })
   const navigate = useNavigate()
   const mutation = useMutation((body: Body) => searchFlight(body))
+  const mutationAir = useMutation((body: { query: string }) => searchAirport(body))
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.name === 'date') {
       setBody({
@@ -67,13 +68,23 @@ function Plane() {
       })
     }
   }
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    // e.preventDefault()
-    mutation.mutate(formatBody(body), {
-      onSuccess: (data) => {
-        navigate('/flight/list', { state: data.data.data })
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault()
+    const dataFromId = await mutationAir.mutateAsync({ query: removeVietnameseTones(body.fromId) })
+    const dataToId = await mutationAir.mutateAsync({ query: removeVietnameseTones(body.toId) })
+    await mutation.mutateAsync(
+      {
+        fromId: dataFromId.data.data[0]?.id,
+        toId: dataToId.data.data[0]?.id,
+        date: body.date,
+        returnDate: body.returnDate
+      },
+      {
+        onSuccess: (data) => {
+          navigate('/flight/list', { state: data.data.data })
+        }
       }
-    })
+    )
   }
   return (
     <div className='max-w-[1200px] w-full px-24 '>
@@ -208,6 +219,7 @@ function Plane() {
         </button>
       </div>
       <div className='ml-20'>{mutation.isLoading ? <Loading /> : ''}</div>
+      <div className='ml-20'>{mutationAir.isLoading ? <Loading /> : ''}</div>
     </div>
   )
 }

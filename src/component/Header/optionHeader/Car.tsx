@@ -1,20 +1,23 @@
 import classNames from 'classnames'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useMutation } from 'react-query'
 import { useNavigate } from 'react-router-dom'
 import { Props, searchCar } from 'src/apis/car.api'
+import { AppContext } from 'src/context/app.context'
 const car = ['4', '5', '7', '16', '29', '30', '35', '45', '47']
 function Car() {
   const [keySearch, setKeySearch] = useState('')
   const [seater, setSeater] = useState('')
   const [isDrive, setIsDrive] = useState(true)
   const navigate = useNavigate()
+  const { setTicket } = useContext(AppContext)
   const searchMutation = useMutation((body: Props) => searchCar(body))
   function handleSearch() {
     searchMutation.mutate(
       { key: keySearch, body: { seater_number: +seater } },
       {
         onSuccess: (data) => {
+          setTicket(isDrive)
           navigate('/car/search', { state: { data: data.data.result, seater } })
         }
       }

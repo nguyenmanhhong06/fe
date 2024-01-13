@@ -18,7 +18,7 @@ export default function Booking() {
     queryKey: ['', location.state.id],
     queryFn: () => getCarId(location.state.id)
   })
-  const { profile } = useContext(AppContext)
+  const { profile, ticket } = useContext(AppContext)
   const [location_trans, setLocation] = useState('')
   function handleDatPhong() {
     if (location.state) {
@@ -28,7 +28,8 @@ export default function Booking() {
           date_pick: new Date().getTime(),
           name: name || profile?.full_name,
           seater: location.state.seater,
-          location: location_trans
+          location: location_trans,
+          auto_drive: ticket
         },
         {
           onSuccess: (data) => {

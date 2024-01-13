@@ -9,6 +9,7 @@ export type BookingBody = {
   location?: string
   name?: string
   tour_day?: number
+  auto_drive?: boolean
   amount_human?: number
   timeBack?: number
   timeOrder?: number

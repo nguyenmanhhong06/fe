@@ -278,7 +278,7 @@ function Car() {
         </ul>
         {updated &&
           data.data.result.map((item: any, index: any) => {
-            if (updated && item.user.full_name.includes(updated)) {
+            if (updated && (item.user.full_name || item.name).includes(updated)) {
               return (
                 <ul className='grid grid-cols-9 items-center mt-4' key={index}>
                   <li className='col-span-1 text-sm text-center font-medium'>{item._id.slice(0, 15)}</li>

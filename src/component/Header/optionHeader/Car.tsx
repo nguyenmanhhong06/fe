@@ -43,16 +43,16 @@ function Car() {
             <path
               d='M2 4V5C2 7.20914 3.79086 9 6 9H11.7639C12.5215 9 13.214 9.428 13.5528 10.1056L14 11M8 7C6.89543 7 6 6.10457 6 5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5C10 6.10457 9.10457 7 8 7Z'
               stroke='#FFFFFF'
-              stroke-width='2'
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
             ></path>
             <path
               d='M6 15H8M16 15H18M21 11H19M19 11L17.8289 6.90112C17.3383 5.18391 15.7687 4 13.9828 4H13M19 11H3M17 18H20V19.5C20 20.3284 19.3284 21 18.5 21C17.6716 21 17 20.3284 17 19.5V18ZM4 18H7V19.5C7 20.3284 6.32843 21 5.5 21C4.67157 21 4 20.3284 4 19.5V18ZM5 18H19C20.1046 18 21 17.1046 21 16V14C21 12.3431 19.6569 11 18 11H6C4.34315 11 3 12.3431 3 14V16C3 17.1046 3.89543 18 5 18Z'
               stroke='#FFFFFF'
-              stroke-width='2'
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
             ></path>
           </svg>
           <p>Tự lái</p>
@@ -74,16 +74,16 @@ function Car() {
             <path
               d='M8 4.94713V7.5C8 9.70914 9.79086 11.5 12 11.5V11.5C14.2091 11.5 16 9.70914 16 7.5V4.94713M6.5 20L3.5 21C3.5 21 5 14 12 14C19 14 20.5 21 20.5 21L17.5 20M12 7C10.217 7 7.92539 4.96542 6.75755 3.79836C6.45369 3.4947 6.6723 3 7.10188 3H16.8981C17.3277 3 17.5463 3.4947 17.2425 3.79836C16.0746 4.96542 13.783 7 12 7Z'
               stroke='#FFFFFF'
-              stroke-width='2'
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
             ></path>
             <path
               d='M12 16C13.6569 16 15 17.3431 15 19C15 20.6569 13.6569 22 12 22C10.3431 22 9 20.6569 9 19C9 17.3431 10.3431 16 12 16Z'
               stroke='#FFFFFF'
-              stroke-width='2'
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
             ></path>
           </svg>
           <p>Có tài xế</p>

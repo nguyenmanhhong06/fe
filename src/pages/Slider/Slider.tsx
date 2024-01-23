@@ -49,20 +49,18 @@ const data = [
   }
 ]
 export default function Slider() {
-  const navigate = useNavigate()
-
   return (
     <div className=''>
-      <div className='rounded-t-3xl absolute z-11 top-[80%] w-full bg-white'>
+      <div className='rounded-t-3xl w-full bg-white'>
         <div className='mx-auto max-w-[1200px] px-4'>
-          <div className='w-full h-[150px] rounded-lg overflow-hidden mt-[90px]'>
+          <div className='w-full rounded-lg overflow-hidden mt-[90px] max-sm:mt-8'>
             <img
               src='https://ik.imagekit.io/tvlk/image/imageResource/2023/12/11/1702282079827-1ecaea191048ac82823b4cd410be281c.png'
               alt=''
-              className='overflow-hidden object-cover w-full h-full'
+              className='overflow-hidden object-cover object-center w-full h-full'
             />
           </div>
-          <div className='w-full rounded-lg overflow-hidden mt-[90px]'>
+          <div className='w-full rounded-lg overflow-hidden mt-[90px] max-sm:mt-8'>
             <img
               src='https://ik.imagekit.io/tvlk/image/imageResource/2023/12/20/1703036383694-89e163c8c59b70d884359bba236fe840.jpeg'
               alt=''
@@ -70,28 +68,28 @@ export default function Slider() {
             />
           </div>
           <div className='flex gap-2'>
-            <div className='w-full rounded-lg overflow-hidden mt-[90px]'>
+            <div className='w-full rounded-lg overflow-hidden mt-[90px] max-sm:mt-8'>
               <img
                 src='https://ik.imagekit.io/tvlk/image/imageResource/2023/12/01/1701420392966-93e2bb3147f86f26aa10990c6527a5d9.jpeg?tr=q-75,w-320'
                 alt=''
                 className='overflow-hidden object-cover object-center w-full h-full'
               />
             </div>
-            <div className='w-full rounded-lg overflow-hidden mt-[90px]'>
+            <div className='w-full rounded-lg overflow-hidden mt-[90px] max-sm:mt-8'>
               <img
                 src='https://ik.imagekit.io/tvlk/image/imageResource/2023/12/01/1701420403280-8ca317a954d6fadbdf67471aacfefae2.jpeg?tr=q-75,w-320'
                 alt=''
                 className='overflow-hidden object-cover object-center w-full h-full'
               />
             </div>
-            <div className='w-full rounded-lg overflow-hidden mt-[90px]'>
+            <div className='w-full rounded-lg overflow-hidden mt-[90px] max-sm:mt-8'>
               <img
                 src='https://ik.imagekit.io/tvlk/image/imageResource/2023/12/01/1701420425994-3e722f2f084ee21688486344d62798f4.jpeg?tr=q-75,w-320'
                 alt=''
                 className='overflow-hidden object-cover object-center w-full h-full'
               />
             </div>
-            <div className='w-full rounded-lg overflow-hidden mt-[90px]'>
+            <div className='w-full rounded-lg overflow-hidden mt-[90px] max-sm:mt-8'>
               <img
                 src='https://ik.imagekit.io/tvlk/image/imageResource/2023/12/01/1701420433420-1ad788991090befb8d0000de3cdfa81d.jpeg?tr=q-75,w-320'
                 alt=''
@@ -99,7 +97,7 @@ export default function Slider() {
               />
             </div>
           </div>
-          <div className='w-full rounded-lg overflow-hidden mt-[90px]'>
+          <div className='w-full rounded-lg overflow-hidden mt-[90px] max-sm:mt-8'>
             <img
               src='https://ik.imagekit.io/tvlk/image/imageResource/2023/11/30/1701335891209-a8b7016ce7ef974ed2a8d66577216b09.jpeg?tr=q-75,w-1280'
               alt=''
@@ -137,7 +135,9 @@ export default function Slider() {
           />
         </div>
         <div className='mx-auto max-w-[1200px] px-4'>
-          <h1 className='text-[24px] text-[#434343] font-bold mb-[30px]'>Nâng tầm chuyến đi theo cách bạn muốn</h1>
+          <h1 className='text-2xl text-[#434343] font-bold mt-10 max-sm:mt-6 mb-[30px]'>
+            Nâng tầm chuyến đi theo cách bạn muốn
+          </h1>
           <div className='flex gap-3'>
             <div className='rounded-xl overflow-hidden mb-10 shadow-md w-fit'>
               <img
@@ -166,7 +166,7 @@ export default function Slider() {
           </div>
         </div>
         <div className='mx-auto max-w-[1200px] px-4'>
-          <div className='flex gap-2 items-center mb-[30px]'>
+          <div className='flex gap-2 items-center max-sm:items-start mb-[30px]'>
             <div className='w-[24px] h-[24px]'>
               <img
                 src='https://ik.imagekit.io/tvlk/image/imageResource/2023/06/01/1685631988109-4e2f068146d14d35aa47c5e9e9add5ff.png?_src=imagekit&tr=q-40,h-24'
@@ -174,87 +174,28 @@ export default function Slider() {
                 className='overflow-hidden object-cover object-center w-full h-full'
               />
             </div>
-            <h1 className='text-[24px] text-[#434343] font-bold'>Tái khám phá bản thân ở châu Á và những nơi khác</h1>
+            <h1 className='text-2xl max-sm:text-xl text-[#434343] font-bold'>
+              Tái khám phá bản thân ở châu Á và những nơi khác
+            </h1>
           </div>
-          <div className='grid grid-cols-3 gap-4'>
-            <div className='col-span-1'>
-              <div className='w-full h-48 rounded-md overflow-hidden relative'>
-                <img
-                  src='https://ik.imagekit.io/tvlk/image/imageResource/2023/06/14/1686721948003-7928a0b56734caaca663b9239cde96da.png?tr=q-75,w-427'
-                  alt=''
-                  className='w-full object-cover object-bottom h-full'
-                />
-                <div className='absolute z-10 top-0 left-0 p-6 text-white'>
-                  <h1 className='text-[24px] font-bold'>Việt Nam</h1>
-                  <p className='text-[12px]'>16,763 accommodations</p>
+          <div className='grid grid-cols-3 max-sm:grid-cols-4 gap-4'>
+            {Array(6)
+              .fill(0)
+              .map((item, index) => (
+                <div className='col-span-1 max-sm:col-span-2' key={index}>
+                  <div className='w-full h-48 max-sm:h-40 rounded-md overflow-hidden relative'>
+                    <img
+                      src='https://ik.imagekit.io/tvlk/image/imageResource/2023/06/14/1686721948003-7928a0b56734caaca663b9239cde96da.png?tr=q-75,w-427'
+                      alt=''
+                      className='w-full object-cover object-bottom h-full'
+                    />
+                    <div className='absolute z-10 top-0 left-0 p-6 max-sm:p-3 text-white'>
+                      <h1 className='text-2xl font-bold max-sm:text-base'>Việt Nam</h1>
+                      <p className='text-[12px]'>16,763 accommodations</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className='col-span-1'>
-              <div className='w-full h-48 rounded-md overflow-hidden relative'>
-                <img
-                  src='https://ik.imagekit.io/tvlk/image/imageResource/2023/06/14/1686721948003-7928a0b56734caaca663b9239cde96da.png?tr=q-75,w-427'
-                  alt=''
-                  className='w-full object-cover object-bottom h-full'
-                />
-                <div className='absolute z-10 top-0 left-0 p-6 text-white'>
-                  <h1 className='text-[24px] font-bold'>Việt Nam</h1>
-                  <p className='text-[12px]'>16,763 accommodations</p>
-                </div>
-              </div>
-            </div>
-            <div className='col-span-1'>
-              <div className='w-full h-48 rounded-md overflow-hidden relative'>
-                <img
-                  src='https://ik.imagekit.io/tvlk/image/imageResource/2023/06/14/1686721948003-7928a0b56734caaca663b9239cde96da.png?tr=q-75,w-427'
-                  alt=''
-                  className='w-full object-cover object-bottom h-full'
-                />
-                <div className='absolute z-10 top-0 left-0 p-6 text-white'>
-                  <h1 className='text-[24px] font-bold'>Việt Nam</h1>
-                  <p className='text-[12px]'>16,763 accommodations</p>
-                </div>
-              </div>
-            </div>
-            <div className='col-span-1'>
-              <div className='w-full h-48 rounded-md overflow-hidden relative'>
-                <img
-                  src='https://ik.imagekit.io/tvlk/image/imageResource/2023/06/14/1686721948003-7928a0b56734caaca663b9239cde96da.png?tr=q-75,w-427'
-                  alt=''
-                  className='w-full object-cover object-bottom h-full'
-                />
-                <div className='absolute z-10 top-0 left-0 p-6 text-white'>
-                  <h1 className='text-[24px] font-bold'>Việt Nam</h1>
-                  <p className='text-[12px]'>16,763 accommodations</p>
-                </div>
-              </div>
-            </div>
-            <div className='col-span-1'>
-              <div className='w-full h-48 rounded-md overflow-hidden relative'>
-                <img
-                  src='https://ik.imagekit.io/tvlk/image/imageResource/2023/06/14/1686721948003-7928a0b56734caaca663b9239cde96da.png?tr=q-75,w-427'
-                  alt=''
-                  className='w-full object-cover object-bottom h-full'
-                />
-                <div className='absolute z-10 top-0 left-0 p-6 text-white'>
-                  <h1 className='text-[24px] font-bold'>Việt Nam</h1>
-                  <p className='text-[12px]'>16,763 accommodations</p>
-                </div>
-              </div>
-            </div>
-            <div className='col-span-1'>
-              <div className='w-full h-48 rounded-md overflow-hidden relative'>
-                <img
-                  src='https://ik.imagekit.io/tvlk/image/imageResource/2023/06/14/1686721948003-7928a0b56734caaca663b9239cde96da.png?tr=q-75,w-427'
-                  alt=''
-                  className='w-full object-cover object-bottom h-full'
-                />
-                <div className='absolute z-10 top-0 left-0 p-6 text-white'>
-                  <h1 className='text-[24px] font-bold'>Việt Nam</h1>
-                  <p className='text-[12px]'>16,763 accommodations</p>
-                </div>
-              </div>
-            </div>
+              ))}
           </div>
           <Content
             button='Xem tất cả'

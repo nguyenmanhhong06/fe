@@ -7,7 +7,7 @@ function FlightItem() {
   const location = useLocation()
   const navigate = useNavigate()
   const [value, setValue] = useState(10)
-  if (!location?.state?.itineraries?.length) {
+  if (location?.state) {
     return <Loading />
   }
   return (
@@ -16,7 +16,7 @@ function FlightItem() {
       <div className='bg-[#eff1f2]'>
         <div className='mx-auto px-4 pt-[120px] max-w-[600px]'>
           <div className='flex flex-col gap-2 items-center px-4 py-2'>
-            {location?.state?.itineraries?.slice(0, value).map((item: any) => {
+            {location?.state?.itineraries.slice(0, 10).map((item: any) => {
               return (
                 <div className='px-3 py-6 flex justify-between items-center rounded-xl w-full bg-white' key={item.id}>
                   <div className='flex justify-center '>
@@ -61,7 +61,7 @@ function FlightItem() {
                       >
                         <path
                           d='M3 12a1.5 1.5 0 001.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 002.122 2.12l7.5-7.5a1.5 1.5 0 000-2.12l-7.5-7.5a1.5 1.5 0 00-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 003 12z'
-                          clip-rule='evenodd'
+                          clipRule='evenodd'
                         ></path>
                       </svg>
                     </button>

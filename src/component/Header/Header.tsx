@@ -49,20 +49,18 @@ export default function Header() {
     })
   }, [])
   return (
-    <div className='slider'>
+    <div className='slider max-sm:hidden'>
       <div
         className={classNames('fixed top-0 left-0 right-0', {
           'bg-white text-[#03121a]': scroll,
           'text-white': !scroll
         })}
       >
-        <div className='mx-auto max-w-[1200px] px-4 '>
+        <div className='mx-auto max-w-[1200px] px-4'>
           <div className='flex justify-between items-center h-[72px] text-[14px] font-medium'>
-            {/* logo */}
             <div className='mt-4'>
               <img src={scroll ? logo : logo2} alt='logo-img' className='w-[190px] h-[190px] object-cover' />
             </div>
-            {/* menu */}
             <div className='flex gap-5 '>
               <ul className='flex gap-6 items-center'>
                 <li className='flex gap-3'>
@@ -211,7 +209,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className='absolute top-[150px] flex flex-col items-center w-full text-white font-medium'>
+      <div className='absolute top-[150px] flex flex-col w-full items-center text-white font-medium'>
         <h1 className='mt-5 text-[32px]'>Từ Đông Nam Á Đến Thế Giới, Trong Tầm Tay Bạn</h1>
         <ul className='flex text-[16px] gap-1 mt-3 items-center border-b'>
           <li

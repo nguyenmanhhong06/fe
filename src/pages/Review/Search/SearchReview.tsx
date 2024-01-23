@@ -12,7 +12,7 @@ function SearchReview() {
   return (
     <div className='bg-[#f2f2f2]'>
       <HeaderSub />
-      <div className='mx-auto px-4 pt-[140px] max-w-[1000px] '>
+      <div className='mx-auto px-4 sm:pt-[140px] max-sm:pt-8 max-w-[1000px] '>
         <div className='bg-[#fff] '>
           <h1 className='py-4 px-8 border'>Kết quả hàng đầu với "{state?.key}"</h1>
           {state.data.result.map((_: any, index: any) =>

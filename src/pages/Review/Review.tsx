@@ -20,15 +20,15 @@ function Review() {
   return (
     <>
       <HeaderSub />
-      <div className=' mx-auto px-4 mt-[140px] max-w-[1000px]'>
+      <div className=' mx-auto px-4 sm:mt-[140px] max-w-[1000px]'>
         <h1 className='mt-12 text-[54px] font-bold text-center'>Đi đâu?</h1>
-        <div className='mt-8 flex justify-center rounded-3xl'>
-          <div className='shadow-t-mh rounded-3xl'>
-            <div className='flex pl-4 pr-3 w-[800px] h-[56px] items-center shadow-mh rounded-3xl'>
+        <div className='mt-8 flex justify-center rounded-3xl w-full'>
+          <div className='shadow-t-mh rounded-3xl w-full'>
+            <div className='flex pl-4 pr-3 max-w-[1000px] w-full h-[56px] items-center shadow-mh rounded-3xl'>
               <svg viewBox='0 0 24 24' width='24px' height='24px'>
                 <path
-                  fill-rule='evenodd'
-                  clip-rule='evenodd'
+                  fillRule='evenodd'
+                  clipRule='evenodd'
                   d='M9.74 3.75a5.99 5.99 0 100 11.98 5.99 5.99 0 000-11.98zM2.25 9.74a7.49 7.49 0 1113.3 4.728l5.44 5.442-1.06 1.06-5.44-5.439A7.49 7.49 0 012.25 9.74z'
                 ></path>
               </svg>
@@ -36,7 +36,7 @@ function Review() {
                 placeholder='Địa điểm tham quan, hoạt động giải trí, khách sạn...'
                 type='text'
                 onChange={(e) => setKey(e.target.value)}
-                className='outline-none w-full ml-2'
+                className='outline-none w-full ml-2 truncate'
               />
               <button onClick={handleSubmit} className='shrink-0 px-4 py-3 bg-[#34e0a1] font-bold rounded-3xl'>
                 Tìm kiếm

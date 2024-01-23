@@ -23,7 +23,7 @@ function Retrieve() {
   return (
     <>
       <HeaderSub />
-      <div className='mx-auto px-4 mt-[120px] max-w-[800px] mb-20'>
+      <div className='mx-auto px-4 sm:mt-[120px] max-sm:mt-8 max-w-[800px] mb-20'>
         <div className=''>
           <div className='flex justify-between'>
             <h1 className='text-[#03121a] font-bold '>Giao dịch đang tiến hành</h1>

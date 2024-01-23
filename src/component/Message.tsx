@@ -1,15 +1,31 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './message.css'
+import { AppContext } from 'src/context/app.context'
+import { useNavigate } from 'react-router-dom'
+import socket from 'src/pages/Chat/socket'
+import Chat from 'src/pages/Chat/Chat'
 function Message({ text }: { text?: string }) {
+  const { message, setTicket, profile, setMessage } = useContext(AppContext)
+  const navigate = useNavigate()
+  // const [none, setNone] = useState(true)
+  // function handleMessage() {
+  //   if (ring === 'ring') {
+  //     navigate('/chat')
+  //     setTicket(message.sender_id)
+  //     setRing('')
+  //   }
+  // }
   return (
-    <div className={`fixed right-[40px] bottom-[60px] p-3 rounded-full bg-[#42a6f4] ${text} cursor-pointer`}>
+    <div className={`fixed right-[40px] bottom-[60px] p-3 rounded-full bg-[#42a6f4]`}>
+      <Chat none={message ? 'hidden' : ''} setNone={setMessage} />
       <svg
         xmlns='http://www.w3.org/2000/svg'
         fill='white'
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className='w-6 h-6 '
+        className='w-6 h-6 cursor-pointer'
+        onClick={() => setMessage(!message)}
       >
         <path
           strokeLinecap='round'

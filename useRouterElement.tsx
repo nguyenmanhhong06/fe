@@ -21,6 +21,7 @@ import Pay from 'src/component/Pay'
 import Flight from 'src/component/Flight'
 import FlightItem from 'src/component/FlightItem'
 import Message from 'src/component/Message'
+import Chat from 'src/pages/Chat/Chat'
 const useRouterElements = () => {
   const { isAuthenticated } = useContext(AppContext)
   function ProtectedRoute() {
@@ -202,6 +203,15 @@ const useRouterElements = () => {
       element: (
         <>
           <DanhGia />
+          <Message text='ping-abc' />
+        </>
+      )
+    },
+    {
+      path: 'chat',
+      element: (
+        <>
+          <Chat />
           <Message text='ping-abc' />
         </>
       )

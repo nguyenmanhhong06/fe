@@ -45,8 +45,8 @@ export default function Booking() {
     <>
       <HeaderSub />
       <div className='bg-[#f7f9fa]'>
-        <div className='mx-auto flex px-4 pt-[140px] max-w-[1200px]'>
-          <div className='w-2/3'>
+        <div className='mx-auto px-4 flex max-sm:flex-col sm:pt-[140px] max-w-[1200px]'>
+          <div className='sm:w-2/3'>
             <div>
               <h1 className='text-[#03121a] text-[24px] font-bold'>Đặt vé tham quan</h1>
               <p className='text-[#687176] text-[16px] font-bold mt-2 mb-2'>
@@ -136,9 +136,9 @@ export default function Booking() {
                       <path
                         d='M6 9L12 15L18 9'
                         stroke='#0194f3'
-                        stroke-width='2'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
+                        strokeWidth='2'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
                       ></path>
                     </svg>
                     <p className='text-[#03121a] text-[16px] font-bold'>{location.state.price} VND</p>
@@ -170,7 +170,7 @@ export default function Booking() {
                 </div>
               </div>
             </div>
-            <div className='mt-4 grid grid-cols-9 mb-32 justify-between'>
+            <div className='mt-4 grid grid-cols-9 max-sm:mb-8 sm:mb-32 justify-between max-sm:hidden'>
               <p className='col-span-4 text-[#03121a] text-[14px] font-semibold'>
                 Khi nhấn vào nút này bạn công nhận mình đã đọc và đồng ý với các Điều khoản & Điều kiện và Chính sách
                 quyền riêng tư của Traveloka
@@ -186,7 +186,7 @@ export default function Booking() {
               </div>
             </div>
           </div>
-          <div className='ml-4 w-1/3'>
+          <div className='ml-4 sm:w-1/3 max-sm:mt-8'>
             <div className='p-4 bg-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-t-xl'>
               <div className='flex justify-between'>
                 <p className='text-[#03121a] text-[16px] font-bold'>{result?.data.result[0].car_name}</p>
@@ -214,16 +214,16 @@ export default function Booking() {
                       <path
                         d='M9 14H17M6 21V4C6 3.44772 6.44772 3 7 3V3C7.55228 3 7.97243 3.56084 8.43968 3.85529C8.57822 3.94259 8.76041 4 9 4C9.23959 4 9.42178 3.94259 9.56032 3.85529C10.0276 3.56084 10.4477 3 11 3V3C11.5523 3 11.9724 3.56084 12.4397 3.85529C12.5782 3.94259 12.7604 4 13 4C13.2396 4 13.4218 3.94259 13.5603 3.85529C14.0276 3.56084 14.4477 3 15 3V3C15.5523 3 15.9724 3.56084 16.4397 3.85529C16.5782 3.94259 16.7604 4 17 4C17.2396 4 17.4218 3.94259 17.5603 3.85529C18.0276 3.56084 18.4477 3 19 3V3C19.5523 3 20 3.44772 20 4V12V17C20 19.2091 18.2091 21 16 21H6ZM6 13H3V18.0023C3 19.6579 4.34214 21 5.99775 21V21L6 13Z'
                         stroke='#687176'
-                        stroke-width='2'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
+                        strokeWidth='2'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
                       ></path>
                       <path
                         d='M14 17H16.5M9 11H13M9 8H13M16 11H17M16 8H17'
                         stroke='#0194F3'
-                        stroke-width='2'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
+                        strokeWidth='2'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
                       ></path>
                     </svg>
                     <p className='font-bold'>Tổng giá thuê xe</p>
@@ -233,6 +233,21 @@ export default function Booking() {
                 <div>
                   <p className='text-[#ff5e1f] font-bold'>{result?.data.result[0].price} VND</p>
                 </div>
+              </div>
+            </div>
+            <div className='mt-4 grid grid-cols-9 max-sm:mb-8 sm:mb-32 justify-between sm:hidden'>
+              <p className='col-span-4 text-[#03121a] text-[14px] font-semibold'>
+                Khi nhấn vào nút này bạn công nhận mình đã đọc và đồng ý với các Điều khoản & Điều kiện và Chính sách
+                quyền riêng tư của Traveloka
+              </p>
+              <p className='col-span-3'></p>
+              <div className='col-span-2'>
+                <button
+                  onClick={handleDatPhong}
+                  className='py-2 px-3 text-[15px] text-white rounded-lg font-semibold bg-[#ff5e1f]'
+                >
+                  Đặt vé ngay
+                </button>
               </div>
             </div>
           </div>

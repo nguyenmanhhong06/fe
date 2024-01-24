@@ -25,6 +25,7 @@ export default function Booking() {
         {
           transportation_id: location.state.id,
           date_pick: new Date().getTime(),
+          time_start: ticket,
           location: location_trans,
           name: name || profile?.full_name
         },

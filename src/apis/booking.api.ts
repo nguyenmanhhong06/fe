@@ -11,6 +11,7 @@ export type BookingBody = {
   tour_day?: number
   auto_drive?: boolean
   amount_human?: number
+  time_start?: number
   timeBack?: number
   timeOrder?: number
 }

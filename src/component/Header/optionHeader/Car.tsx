@@ -9,6 +9,7 @@ function Car() {
   const [keySearch, setKeySearch] = useState('')
   const [seater, setSeater] = useState('')
   const [isDrive, setIsDrive] = useState(true)
+  const [date, setDate] = useState(0)
   const navigate = useNavigate()
   const { setTicket } = useContext(AppContext)
   const searchMutation = useMutation((body: Props) => searchCar(body))
@@ -18,7 +19,7 @@ function Car() {
       {
         onSuccess: (data) => {
           setTicket(isDrive)
-          navigate('/car/search', { state: { data: data.data.result, seater } })
+          navigate('/car/search', { state: { data: data.data.result, seater, date } })
         }
       }
     )
@@ -91,13 +92,23 @@ function Car() {
       </div>
       <div className='mt-2 justify-start grid grid-cols-10 items-end'>
         <div className='col-span-1'></div>
-        <div className='w-full rounded-l-lg ml-4 overflow-hidden col-span-5'>
+        <div className='w-full rounded-l-lg ml-4 overflow-hidden col-span-3'>
           <p className='text-[14px] ml-4 font-semibold'>Điểm đón</p>
           <div className='w-full rounded-l-lg overflow-hidden mt-4'>
             <input
               type='text'
               placeholder='VD: Hà Nội,...'
               onChange={(e) => setKeySearch(e.target.value)}
+              className='text-[#000] px-3 w-full min-h-[40px] border-y-[3px] border-r-[0px] border-l-[3px] border-[#cdd0d180] outline-none'
+            />
+          </div>
+        </div>
+        <div className='w-full ml-4 overflow-hidden col-span-2'>
+          <p className='text-[14px] ml-4 font-semibold'>Ngày nhận xe</p>
+          <div className='w-full overflow-hidden mt-4'>
+            <input
+              type='date'
+              onChange={(e) => setDate(new Date(e.target.value).getTime())}
               className='text-[#000] px-3 w-full min-h-[40px] border-y-[3px] border-r-[0px] border-l-[3px] border-[#cdd0d180] outline-none'
             />
           </div>

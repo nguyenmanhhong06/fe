@@ -243,8 +243,8 @@ function Location() {
           <li className='col-span-1 text-center'>Ngày đặt vé</li>
           <li className='col-span-1 text-center'>Giá tiền</li>
           <li className='col-span-1 text-center'>Mã thanh toán</li>
-          <li className='col-span-1 text-center'>Ngày check-in</li>
-          <li className='col-span-1 text-center'>Ngày check-out</li>
+          <li className='col-span-1 text-center'>Ngày thăm quan</li>
+          <li className='col-span-1 text-center'>Số người</li>
           <li className='col-span-1 text-center'>Trạng thái vé</li>
           <li className='col-span-1 text-center'>Hành động</li>
         </ul>
@@ -258,8 +258,8 @@ function Location() {
                   <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.date_pick)}</li>
                   <li className='col-span-1 text-sm text-center font-medium'>{item.locations?.price}</li>
                   <li className='col-span-1 text-sm text-center font-medium'>{item.code}</li>
-                  <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.timeOrder)}</li>
-                  <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.timeBack)}</li>
+                  <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.tour_day)}</li>
+                  <li className='col-span-1 text-sm text-center font-medium'>{item.amount_human}</li>
                   <li className='col-span-1 text-sm text-center font-medium'>{formatStatus(item.status)}</li>
                   <li className='col-span-1'>
                     {item.status === 0 ? (
@@ -303,8 +303,8 @@ function Location() {
                 <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.date_pick)}</li>
                 <li className='col-span-1 text-sm text-center font-medium'>{item.locations?.price}</li>
                 <li className='col-span-1 text-sm text-center font-medium'>{item.code}</li>
-                <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.timeOrder)}</li>
-                <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.timeBack)}</li>
+                <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.tour_day)}</li>
+                <li className='col-span-1 text-sm text-center font-medium'>{item.amount_human}</li>
                 <li className='col-span-1 text-sm text-center font-medium'>{formatStatus(item.status)}</li>
                 <li className='col-span-1'>
                   {item.status === 0 ? (

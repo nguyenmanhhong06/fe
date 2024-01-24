@@ -29,7 +29,8 @@ export default function Booking() {
           name: name || profile?.full_name,
           seater: location.state.seater,
           location: location_trans,
-          auto_drive: ticket
+          auto_drive: ticket,
+          time_start: location.state.date
         },
         {
           onSuccess: (data) => {

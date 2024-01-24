@@ -2,6 +2,7 @@ import React from 'react'
 import { formatDate, formatStatus } from 'src/utills/date'
 
 function TransItem({ _, index }: { _: any; index: number }) {
+  console.log(_)
   return (
     <div className='py-3 px-4 bg-[#ecf8ff] shadow-md rounded-lg mt-4' key={index}>
       <div className='flex justify-between'>
@@ -51,6 +52,7 @@ function TransItem({ _, index }: { _: any; index: number }) {
           </p>
           <p>Ngày đặt vé: {formatDate(_.date_pick)}</p>
           <p>Địa điểm chi tiết: {_.location} </p>
+          <p>Ngày vận chuyển: {formatDate(_?.time_start)} </p>
           <p>Trạng thái: {formatStatus(_.status)}</p>
         </div>
       </div>

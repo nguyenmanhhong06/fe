@@ -10,7 +10,7 @@ export default function Search() {
   const location = useLocation()
   const { setMessage, profile } = useContext(AppContext)
   function handlePickRoom(price: string, id: string) {
-    navigate('/car/booking', { state: { price, id, seater: location.state.seater } })
+    navigate('/car/booking', { state: { price, id, seater: location.state.seater, date: location.state.date } })
   }
   function handleChat(id: string) {
     if (id !== profile._id) {

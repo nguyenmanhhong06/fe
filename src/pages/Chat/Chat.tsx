@@ -14,7 +14,9 @@ export default function Chat({
   const [conversations, setConversations] = useState<any>([])
   const [members, setMembers] = useState<any>([])
   const [receiver, setReceiver] = useState('')
-  const { profile, ticket, setMessage } = useContext(AppContext)
+  const [name, setName] = useState('')
+  const { profile, id, setMessage, message } = useContext(AppContext)
+
   const ref = useRef<any>(null)
   useEffect(() => {
     if (profile?._id) {
@@ -33,19 +35,27 @@ export default function Chat({
     return () => {
       socket.disconnect()
     }
-  }, [])
+  }, [profile])
   useEffect(() => {
     if (members.length > 0) {
-      setReceiver(members[0].receiver_id)
+      setReceiver(members[0].userId)
     }
-  }, [members])
+    if (id.length > 0) {
+      setReceiver(id)
+    }
+  }, [members, message])
   useEffect(() => {
-    if (receiver) {
+    if (receiver?.length > 0) {
       http.get(`/conversations/receivers/${receiver}`).then((res) => {
         setConversations(res.data.result.conversations)
       })
     }
   }, [receiver])
+  useEffect(() => {
+    if (id.length > 0) {
+      http.get(`users/${id}`).then((res) => setName(res.data.result.full_name))
+    }
+  }, [id])
   async function handleFetchMessage() {
     const mem = await http.get(`/conversations`)
     setMembers(mem.data.result)
@@ -72,7 +82,6 @@ export default function Chat({
       }
     ])
   }
-
   return (
     <div
       className={`${none} flex gap-2 p-1 justify-start rounded-lg w-[500px] absolute bg-[#f7f7f7] top-[-200px] left-[-507px]`}
@@ -82,13 +91,14 @@ export default function Chat({
         <div className='flex flex-col gap-2 overflow-scroll h-[230px] custom-scrollbar'>
           {members?.length > 0 &&
             members.map((item: any) => {
+              console.log(item)
               return (
                 <div
-                  onClick={() => setReceiver(item.receiver_id)}
+                  onClick={() => setReceiver(item.userId)}
                   className='p-3 cursor-pointer hover:bg-blue-300 hover:text-white font-semibold border rounded-xl text-xs'
-                  key={item.user._id}
+                  key={item?.userId}
                 >
-                  {item.user.full_name}
+                  {item?.result?.full_name}
                 </div>
               )
             })}
@@ -96,7 +106,7 @@ export default function Chat({
       </div>
       <div className='w-full'>
         <div className='flex justify-between items-center bg-white pr-2'>
-          <p className='p-3 font-semibold'>{members?.length > 0 && members[0].user.full_name}</p>
+          <p className='p-3 font-semibold'>{name || (members?.length > 0 && members[0].result.full_name)}</p>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'

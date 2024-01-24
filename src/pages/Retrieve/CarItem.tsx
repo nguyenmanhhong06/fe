@@ -1,5 +1,5 @@
 import React from 'react'
-import { formatStatus } from 'src/utills/date'
+import { formatDate, formatStatus } from 'src/utills/date'
 
 function CarItem({ _, index }: { _: any; index: number }) {
   console.log(_)
@@ -52,6 +52,7 @@ function CarItem({ _, index }: { _: any; index: number }) {
           </p>
           <p>Tự lái: {_.auto_drive ? 'Tự lái xe' : 'Có tài xế'}</p>
           <p>Địa điểm chi tiết: {_.location} </p>
+          <p>Ngày đặt vé xe: {formatDate(_.time_start)} </p>
           <p>Trạng thái: {formatStatus(_.status)}</p>
         </div>
       </div>

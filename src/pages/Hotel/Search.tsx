@@ -23,13 +23,14 @@ export const Start = () => {
 export default function Search() {
   const navigate = useNavigate()
   const location = useLocation()
-  const { profile, setMessage } = useContext(AppContext)
+  const { profile, setMessage, setId } = useContext(AppContext)
   function handlePickRoom(price: string, id: string) {
     navigate('/hotel/booking', { state: { price, id } })
   }
   function handleChat(id: string) {
     if (id !== profile._id) {
       setMessage(false)
+      setId(id)
     }
   }
   return (

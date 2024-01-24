@@ -250,14 +250,14 @@ function Transportation() {
           <li className='col-span-1 text-center'>Ngày đặt vé</li>
           <li className='col-span-1 text-center'>Giá tiền</li>
           <li className='col-span-1 text-center'>Mã thanh toán</li>
-          <li className='col-span-1 text-center'>Ngày check-in</li>
+          <li className='col-span-1 text-center'>Ngày vận chuyển</li>
           <li className='col-span-1 text-center'>Ngày check-out</li>
           <li className='col-span-1 text-center'>Trạng thái vé</li>
           <li className='col-span-1 text-center'>Hành động</li>
         </ul>
         {updated &&
           data.data.result.map((item: any, index: any) => {
-            if (updated && (item.user.full_name || item.name).includes(updated)) {
+            if (updated && (item?.user?.full_name || item.name).includes(updated)) {
               return (
                 <ul className='grid grid-cols-9 items-center mt-4' key={index}>
                   <li className='col-span-1 text-sm text-center font-medium'>{item._id.slice(0, 15)}</li>
@@ -265,8 +265,8 @@ function Transportation() {
                   <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.date_pick)}</li>
                   <li className='col-span-1 text-sm text-center font-medium'>{item.transportations?.price}</li>
                   <li className='col-span-1 text-sm text-center font-medium'>{item.code}</li>
-                  <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.timeOrder)}</li>
-                  <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.timeBack)}</li>
+                  <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.time_start)}</li>
+                  <li className='col-span-1 text-sm text-center font-medium'>{item.location}</li>
                   <li className='col-span-1 text-sm text-center font-medium'>{formatStatus(item.status)}</li>
                   <li className='col-span-1'>
                     {item.status === 0 ? (
@@ -310,8 +310,8 @@ function Transportation() {
                 <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.date_pick)}</li>
                 <li className='col-span-1 text-sm text-center font-medium'>{item.transportations?.price}</li>
                 <li className='col-span-1 text-sm text-center font-medium'>{item.code}</li>
-                <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.timeOrder)}</li>
-                <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.timeBack)}</li>
+                <li className='col-span-1 text-sm text-center font-medium'>{formatDate(item.time_start)}</li>
+                <li className='col-span-1 text-sm text-center font-medium'>{item.location}</li>
                 <li className='col-span-1 text-sm text-center font-medium'>{formatStatus(item.status)}</li>
                 <li className='col-span-1'>
                   {item.status === 0 ? (
